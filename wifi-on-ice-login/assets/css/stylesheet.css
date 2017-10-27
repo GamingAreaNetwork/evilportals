@@ -1,0 +1,522 @@
+/********************
+    PAYMENT STUFF
+********************/
+#card-number-field {
+  border: 1px solid #cccccc;
+	border-radius: 4px;
+  -webkit-transition: border-color 160ms;
+  transition: border-color 160ms;
+	padding: 6px 12px;
+}
+
+#card-number-field.braintree-hosted-fields-focused {
+	border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#card-number-field.braintree-hosted-fields-invalid {
+	border-color: tomato;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 99, 71, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 99, 71, 0.6);
+}
+
+#card-number-field.braintree-hosted-fields-valid {
+	border-color: limegreen;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(50, 205, 50, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(50, 205, 50, 0.6);
+}
+
+#security-code-field {
+  border: 1px solid #cccccc;
+	border-radius: 4px;
+  -webkit-transition: border-color 160ms;
+  transition: border-color 160ms;
+	padding: 6px 12px;
+}
+
+#security-code-field.braintree-hosted-fields-focused {
+	border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#security-code-field.braintree-hosted-fields-invalid {
+	border-color: tomato;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 99, 71, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 99, 71, 0.6);
+}
+
+#security-code-field.braintree-hosted-fields-valid {
+	border-color: limegreen;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(50, 205, 50, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(50, 205, 50, 0.6);
+}
+
+#expiration-date-field {
+  border: 1px solid #cccccc;
+	border-radius: 4px;
+  -webkit-transition: border-color 160ms;
+  transition: border-color 160ms;
+	padding: 6px 12px;
+}
+
+#expiration-date-field.braintree-hosted-fields-focused {
+	border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+#expiration-date-field.braintree-hosted-fields-invalid {
+	border-color: tomato;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 99, 71, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 99, 71, 0.6);
+}
+
+#expiration-date-field.braintree-hosted-fields-valid {
+	border-color: limegreen;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(50, 205, 50, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(50, 205, 50, 0.6);
+}
+
+.payment_field {
+	height: 34px;
+}
+
+.verysmall {
+	font-size: 0.7em !important;
+}
+
+.loading_spinner{
+  background-image:url(/images/loading_spinner.gif);
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  display: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#payment_submit{
+  position: relative;
+}
+
+#payment_submit[disabled]{
+  background-color: #9C1212;
+  border-color: #9C1212;
+  outline: none;
+}
+
+#payment_submit[disabled] .loading_spinner{
+  display: block;
+}
+
+#payment_submit[disabled] .payment_button_label{
+  visibility: hidden;
+}
+
+#payment_form{
+  margin-bottom: 0px;
+}
+
+.creditcard{
+  width: 55px;
+  height: auto;
+}
+
+#voucher-message {
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+#voucher-code {
+  font-family: monospace;
+}
+
+#voucher-message-text{
+  font-size: 0.7em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+}
+
+#user-stats{
+  padding-bottom: 10px;
+}
+
+/************************
+  Header
+************************/
+
+.language-select {
+    margin-top: 5px;
+    height: 28px;
+    float: right;
+    border-color: #ec1b2d;
+    border: 1px solid #ec1b2d;
+    border-radius: 4px;
+    outline-color: #FFF;
+}
+
+.language-select:focus, .language-select:active {
+    border-color: #ec1b2d;
+    border: 1.5px solid #ec1b2d;
+}
+
+.logo {
+    margin-left: 5px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+}
+
+.menu, .logo {
+    display: inline-block;
+}
+
+.menu {
+    float: right;
+    margin-right: 5px;
+}
+
+.btn-container, .quota-unthrottled-text-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+.wifi-info-link-container, .terms-link-container, .wifi-status-link-container, .acces-ice-link-container {
+    margin-bottom: 15px;
+}
+
+/***********************
+  BOOTSTRAP OVERRIDES
+************************/
+/*
+.header {
+	margin-top: 20px;
+	margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  content: normal;
+
+}
+*/
+
+.footer {
+	font-size: 0.8em;
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+
+#connect, #connect:visited {
+	background-color: #EC1B2D;
+	border-color: #EC1B2D;
+  margin:1px;
+}
+
+#connect:hover, #connect:active, #connect:focus{
+	background-color: #9C1212;
+	border-color: #9C1212;
+  outline: none;
+}
+
+.disconnect, .disconnect:visited {
+	background-color: #CCC;
+	border-color: #CCC;
+  margin:1px;
+}
+
+.disconnect:hover, .disconnect:active, .disconnect:focus{
+	background-color: #DDD;
+	border-color: #DDD;
+  outline: none;
+}
+
+.connect, .connect:visited {
+	background-color: #EC1B2D;
+	border-color: #EC1B2D;
+  margin:1px;
+}
+
+.connect:hover, .connect:active, .connect:focus{
+	background-color: #9C1212;
+	border-color: #9C1212;
+  outline: none;
+}
+
+.product-buttons {
+  background-color: #EC1B2D;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.product-buttons button {
+  width: 100%;
+  max-width: 18em;
+	background-color: #fcc;
+	border-color: #fcc;
+  color: black;
+}
+
+.product-buttons button:hover,
+.product-buttons button:active,
+.product-buttons button:visited,
+.product-buttons button:focus {
+	background-color: hsl(0, 100%, 85%);
+	border-color: hsl(0, 100%, 85%);
+  outline: none;
+  color: black;
+}
+
+.product-buttons button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.product-buttons p {
+  font-size: 1.5em;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#voucher_form {
+  display: flex;
+  flex-direction: row;
+  margin: 5px auto;
+  padding: 0 5px;
+  font-size: 18px;
+  max-width: 18em;
+}
+
+#voucher_form_username {
+  flex: 1;
+}
+
+#voucher_form_btn {
+  width: auto;
+  margin: 0;
+  margin-left: 10px;
+}
+
+
+.content-container, .wifi-status-link-container.user-offline, .acces-ice-link-container.user-offline, .wifi-info-link-container.user-offline {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media (max-width:767px) {
+  .content-container, .wifi-status-link-container.user-offline, .acces-ice-link-container.user-offline, .wifi-info-link-container.user-offline {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .progress {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .wifi-status-link-container a, .wifi-status-link-container span, .acces-ice-link-container a, .acces-ice-link-container span, .wifi-info-link-container a, .wifi-info-link-container span {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .progress {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+}
+
+.jumbotron {
+  margin-top: 5px;
+	border-top: 10px solid #ec1b2d;
+}
+
+a {
+	color: #C31726;
+}
+
+a:hover {
+	color: #9C1212;
+}
+
+.alert-info a {
+	color: #428bca;
+}
+
+.alert-info a:hover {
+	color: #2a6496;
+}
+
+.payment_div {
+  padding-top: 20px;
+}
+
+.progress {
+  /*var 40px frÃ¥n bÃ¶rjan*/
+  height: 12px;
+  background-color: #C3C3C3;
+  border-radius: 20px;
+  box-shadow: inset 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.progress-bar{
+  padding-top: 15px;
+  background-color: #EC1B2D;
+}
+
+.close{
+  float: left;
+}
+
+.btn {
+  white-space: normal;
+  width: 200px;
+}
+
+#security-code-help-link,
+#expiration-date-help-link {
+  font-weight: normal;
+  color: blue;
+  text-decoration: underline;
+  cursor: help;
+}
+
+.centered {
+   text-align: center;
+   font-size: 0;
+}
+.centered > div {
+   display: inline-block;
+   text-align: center;
+   font-size: 13px;
+}
+
+.img-full {
+  width: 100%;
+}
+
+#portal-button {
+  margin-bottom: 1em;
+}
+
+/****************
+  Triangle
+****************/
+#triangle-wrapper {
+  position: relative;
+}
+
+#triangle-topright {
+	width: 0;
+	height: 0;
+	border-top: 100px solid limegreen;
+	border-left: 100px solid transparent;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+#triangle-text{
+  color: white;
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  top: 1em;
+  text-align: center;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+}
+
+/****************
+   POWERED BY
+****************/
+#powered_by
+{
+	float: right;
+	margin-bottom: 5px;
+
+}
+#powered_by a
+{
+	color: #666666;
+	border-bottom: none;
+}
+
+
+/************************
+    FONTS NOT ADDED YET
+*************************/
+
+@font-face {
+    font-family: "DBHeadLightRegular";
+    src: url("../fonts/dbhea02-webfont.eot");
+    src: url("../fonts/dbhea02-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/dbhea02-webfont.woff") format("woff"),url("../fonts/dbhea02-webfont.ttf") format("truetype"),url("../fonts/dbhea02-webfont.svg#DBHeadLightRegular") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "DBHeadRegular";
+    src: url("../fonts/dbhea03-webfont.eot");
+    src: url("../fonts/dbhea03-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/dbhea03-webfont.woff") format("woff"),url("../fonts/dbhea03-webfont.ttf") format("truetype"),url("../fonts/dbhea03-webfont.svg#DBHeadRegular") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "DBSansRegular";
+    src: url("../fonts/dbsan03-webfont.eot");
+    src: url("../fonts/dbsan03-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/dbsan03-webfont.woff") format("woff"),url("../fonts/dbsan03-webfont.ttf") format("truetype"),url("../fonts/dbsan03-webfont.svg#DBHeadRegular") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "DBSansBold";
+    src: url("../fonts/dbsan06-webfont.eot");
+    src: url("../fonts/dbsan06-webfont.eot?#iefix") format("embedded-opentype"),url("../fonts/dbsan06-webfont.woff") format("woff"),url("../fonts/dbsan06-webfont.ttf") format("truetype"),url("../fonts/dbsan06-webfont.svg#DBSansBold") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "db-icons";
+    src: url("../fonts/db-icons.eot?de5f8900bd1b6298cc0ca94466418537");
+    src: url("../fonts/db-icons.eot?#iefix") format("embedded-opentype"),url("../fonts/db-icons.woff?de5f8900bd1b6298cc0ca94466418537") format("woff"),url("../fonts/db-icons.ttf?de5f8900bd1b6298cc0ca94466418537") format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "VideoJS";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/VideoJS.eot");
+    src: url("../fonts/VideoJS.eot?#iefix") format("embedded-opentype"),url("../fonts/VideoJS.woff") format("woff"),url("../fonts/VideoJS.ttf") format("truetype"),url("../fonts/VideoJS.svg#icomoon") format("svg")
+}

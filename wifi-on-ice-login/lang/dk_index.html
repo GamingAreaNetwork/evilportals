@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>DB Bahn WIFI</title><link rel="stylesheet" href="./assets/css/bootstrap.css" type="text/css"><link rel="stylesheet" href="./assets/css/stylesheet.css" type="text/css"><script src="/js/jquery-2.1.4.min.js"></script><script src="./assets/js/js.cookie.js"></script><script src="./assets/js/bootstrap.min.js"></script><script src="./assets/js/main.js"></script><script type="text/javascript" src="./assets/js/language-select.js"></script></head><body>
+<div class="container">
+  <div class="header">
+    <div class="logo">
+    <img src="./assets/images/logo.svg" alt="Logo" data-image="/images/logo"></div>
+    <div class="menu">
+      <select class="language-select"><option value="/nl" selected>Dutch</option><option value="/en">English</option><option value="/fr">French</option><option value="/de">German</option></select></div>
+    </div>
+    <div class="error" id="error-default" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: default"><strong>Error:</strong>
+          Excuses, er is helaas een fout opgetreden.
+        </span>
+      </div>
+    </div>
+    <div class="error" id="error-payment" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: payment"><strong>Error:</strong>
+          Payment failed.
+        </span>
+      </div>
+    </div>
+    <div class="error" id="error-create_voucher" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: create voucher"><strong>Error:</strong>
+          Failed to create voucher.
+        </span>
+      </div>
+    </div>
+    <div class="error" id="error-email" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: invalid email"><strong>Error:</strong>
+          Email is missing or invalid.
+        </span>
+      </div>
+    </div>
+    <div class="error" id="error-login" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: login"><strong>Error:</strong>
+          Error when logging in, please try again
+        </span>
+      </div>
+    </div>
+    <div class="error" id="error-logout" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: logout"><strong>Error:</strong>
+          Error when logging out, please try again
+        </span>
+      </div>
+    </div>
+    <div class="error" id="error-no_voucher" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: missing voucher"><strong>Error:</strong>
+          Voucher is missing
+        </span>
+      </div>
+    </div>
+    <div class="error" id="error-invalid_voucher" style="display:none">
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close pull-right" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span data-slot="nl: Error: invalid voucher"><strong>Error:</strong>
+          Er is een fout opgetreden. De ingevoerde code is ongeldig. Controleer de code en probeer het opnieuw.
+        </span>
+      </div>
+    </div>
+    <div class="jumbotron">
+      
+      <div class="user-class-2">
+        
+        <div class="user-offline text-center">
+        <img data-image="/images/2c_offline_cover_picture" class="img-responsive img-full" src="./assets/images/2c_offline_cover_picture.jpg"></div>
+      </div>
+      
+      <div class="connectivity">
+        <div class="user-offline content-container">
+          <div class="user-class-2">
+            <div class="user-offline">
+              <h2 data-slot="nl: 2 class: welcome header h2" data-module="2 class: welcome heading">Hartelijk Welkom!</h2>
+              
+              <div data-slot="nl: 2 class: welcome text"><p>bij onze gratis service WiFionICE. Entertainment en ons digitale aanbod vindt u op het ICE-portaal op portal.imICE.de.</p><p>Houdt u er rekening mee dat u de beschikbare bandbreedte met alle andere passagiers deelt. De verbinding is niet geschikt voor groot dataverbruik, zoals videostreaming. We verzoeken u ook om automatische downloads uit te schakelen.</p><p>Deutsche Bahn wenst u veel plezier online.</p></div>
+            </div>
+          </div>
+          
+          <div class="user-offline">
+            <div class="wifi-info-link-container">
+              <span data-slot="nl: Wifi info text before">Meer informatie over&nbsp;</span><a href="/nl/wifiinfo/" data-slot="nl: Wifi info text">WIFIonICE</a>
+            </div>
+            <div class="terms-link-container">
+              <span data-slot="nl: Before Terms text">Ik accepteer de</span> <a href="/nl/terms/" data-slot="nl: Terms Link text">gebruiksvoorwaarden</a> <span data-slot="nl: After Terms text"> van Icomera AB.</span>
+            </div>
+            <div class="text-center btn-container">
+              <form method="post">
+                <input type="hidden" name="login" value="true"><input type="hidden"><button id="connect" name="connect" class="btn btn-lg btn-primary connect" type="submit">
+                <span data-slot="nl: 1 class: login button">Ga online</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="footer font-size-small">
+        <div class="inner">
+          <span data-slot="nl: Footer: copyright">
+            &copy; 2016 Icomera AB All Rights Reserved
+          </span>
+          <span>
+            &nbsp;|&nbsp;
+          </span>
+          <span>
+            <a href="/nl/impressum/" data-slot="nl: Footer: Impressum">Colofon</a>
+          </span>
+          <span>
+            &nbsp;|&nbsp;
+          </span>
+          <span>
+            <a href="/nl/terms/" data-slot="nl: Footer: terms and conditions">Algemene voorwaarden</a>
+          </span>
+          <span>
+            &nbsp;|&nbsp;
+          </span>
+          <span>
+            <a href="http://www.icomera.com" data-slot="nl: Footer: about Icomera">Over Icomera&nbsp;</a>
+          </span>
+          <span>
+            &nbsp;|&nbsp;
+          </span>
+          <span>
+            <a href="http://www.bahn.de" data-slot="nl: Footer: bahn link">Bahn.de</a>
+          </span>
+          <div id="powered_by">
+            <span>
+            <img src="./assets/images/powered_by_icomera.gif" alt="Powered by Icomera"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body></html>
